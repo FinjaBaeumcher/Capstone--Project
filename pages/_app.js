@@ -1,4 +1,4 @@
-import GlobalStyle from "../styles";
+import GlobalStyle from "@/styles";
 import Head from "next/head";
 import useSWR from "swr";
 import { SWRConfig } from "swr";
