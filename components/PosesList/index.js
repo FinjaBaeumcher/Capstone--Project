@@ -10,7 +10,7 @@ export default function PosesList() {
     isLoading,
   } = useSWR("https://yoga-api-nzy4.onrender.com/v1/poses", fetcher);
 
-  if (error) return <h1>Failed</h1>;
+  if (error) return <h1>Failed to load</h1>;
   if (isLoading) return <h1>Loading ...</h1>;
 
   return (
@@ -18,12 +18,7 @@ export default function PosesList() {
       {poses.map((pose) => (
         <li key={pose.id}>
           <h1>{pose.english_name}</h1>
-          <Image
-            src={pose.url_svg}
-            height={200}
-            width={200}
-            alt={pose.url_svg_alt}
-          />
+          <p>{pose.pose_description}</p>
         </li>
       ))}
     </ul>
