@@ -5,11 +5,9 @@ export default function RandomPractice({ name, description, image, alt }) {
     <ul>
       <li>
         <Image src={image} width={200} height={200} alt={alt} />
-      </li>
-      <li>
         <h2>{name}</h2>
+        {description}
       </li>
-      <li>{description}</li>
     </ul>
   );
 }
