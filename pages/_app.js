@@ -22,7 +22,6 @@ export default function App({ Component, pageProps }) {
         <title>Capstone Project</title>
       </Head>
       <Component {...pageProps} poses={poses} />
-      <PosesList poses={poses} />
     </>
   );
 }
