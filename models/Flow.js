@@ -8,6 +8,4 @@ const flowSchema = new Schema({
   time: { type: String, required: true },
 });
 
-const Flow = mongoose.models.Flow || mongoose.model("Flow", flowSchema);
-
-export default Flow;
+export default mongoose.models.Flow || mongoose.model("Flow", flowSchema);
