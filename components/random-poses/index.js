@@ -1,4 +1,4 @@
-import RandomPractice from "../../components/Random Practices";
+import RandomPractice from "../Random Practices";
 
 export default function RandomPoses({ poses }) {
   if (poses.length < 1) {
