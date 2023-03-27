@@ -6,7 +6,11 @@ import RandomPoses from "./random-poses";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
-  const { data: poses, error, isLoading } = useSWR("api/flows", fetcher);
+  const {
+    data: poses,
+    error,
+    isLoading,
+  } = useSWR("https://yoga-api-nzy4.onrender.com/v1/poses", fetcher);
 
   if (error) return <h1>Failed to load</h1>;
   if (isLoading) return <h1>Loading ...</h1>;
