@@ -1,4 +1,4 @@
-import RandomPractice from "../Random Practices";
+import RandomPractices from "../Random Practices/index.js";
 
 export default function RandomPoses({ poses }) {
   if (poses.length < 1) {
@@ -22,7 +22,7 @@ export default function RandomPoses({ poses }) {
   return (
     <>
       {randomPractice.map((randomPractice) => (
-        <RandomPractice
+        <RandomPractices
           key={poses[randomPractice].id}
           name={poses[randomPractice].english_name}
           description={poses[randomPractice].pose_description}
