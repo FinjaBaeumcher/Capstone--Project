@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-export default function RandomPractice({ key, name, description, image, alt }) {
+export default function RandomPractices({
+  key,
+  name,
+  description,
+  image,
+  alt,
+}) {
   return (
     <ul>
       <li key={key}>

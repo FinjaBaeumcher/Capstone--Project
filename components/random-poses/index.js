@@ -1,8 +1,8 @@
-import RandomPractice from "../../components/Random Practices";
+import RandomPractices from "../Random Practices/index.js";
 
 export default function RandomPoses({ poses }) {
-  if (poses.length < 1) {
-    return <h1>Loading ...</h1>;
+  if (!poses || poses.length < 1) {
+    return <h1> No content</h1>;
   }
 
   const randomPractice = handleRandomPractice();
@@ -22,7 +22,7 @@ export default function RandomPoses({ poses }) {
   return (
     <>
       {randomPractice.map((randomPractice) => (
-        <RandomPractice
+        <RandomPractices
           key={poses[randomPractice].id}
           name={poses[randomPractice].english_name}
           description={poses[randomPractice].pose_description}

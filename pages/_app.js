@@ -1,7 +1,7 @@
 import GlobalStyle from "../styles";
 import Head from "next/head";
 import useSWR from "swr";
-import RandomPoses from "./random-poses";
+import Heading from "../components/Heading";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -21,8 +21,8 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>Capstone Project</title>
       </Head>
+      <Heading poses={poses} />
       <Component {...pageProps} poses={poses} />
-      <RandomPoses poses={poses} />
     </>
   );
 }

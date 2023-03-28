@@ -1,4 +1,3 @@
-import useSWR from "swr";
 import Image from "next/image";
 
 export default function PosesList({ poses }) {
