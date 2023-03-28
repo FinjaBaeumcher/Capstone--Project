@@ -1,7 +1,7 @@
 import RandomPractices from "../Random Practices/index.js";
 
 export default function RandomPoses({ poses }) {
-  if (poses.length < 1) {
+  if (!poses || poses.length < 1) {
     return <h1> No content</h1>;
   }
 

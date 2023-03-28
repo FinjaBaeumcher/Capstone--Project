@@ -13,7 +13,7 @@ jest.mock("next/router", () => ({
 test("test", () => {
   render(<Home />);
   const element = screen.getByRole("heading", {
-    name: /Failed to load/,
+    name: /Yoga App/,
   });
   expect(element).toBeInTheDocument();
 });
