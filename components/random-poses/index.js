@@ -23,9 +23,9 @@ export default function RandomPoses({ poses }) {
     <>
       {randomPractice.map((randomPractice) => (
         <RandomPractices
-          key={poses[randomPractice].id}
-          name={poses[randomPractice].english_name}
-          description={poses[randomPractice].pose_description}
+          key={poses[randomPractice]._id}
+          name={poses[randomPractice].peakPose}
+          description={poses[randomPractice].sanskrit_name_adapted}
           image={poses[randomPractice].url_svg}
           alt={poses[randomPractice].url_svg_alt}
         />
