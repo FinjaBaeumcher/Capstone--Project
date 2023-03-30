@@ -1,13 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function RandomPractices({
-  name,
-  description,
-  image,
-  alt,
-  pose,
-}) {
+export default function RandomPractices({ pose }) {
   return (
     <ul>
       <li key={pose._id}>
