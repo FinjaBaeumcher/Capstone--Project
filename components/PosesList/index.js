@@ -11,7 +11,7 @@ export default function PosesList({ poses }) {
             height={200}
             alt={pose.url_svg_alt}
           />
-          <h1>{pose.peakPose}</h1>
+          <h2>{pose.peakPose}</h2>
           <p>{pose.sanskrit_name_adapted}</p>
         </li>
       ))}
