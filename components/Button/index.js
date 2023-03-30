@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function Button() {
+export default function Button({ children, href }) {
   return (
-    <Link href="/">
-      <button>Fertig</button>
+    <Link href={href}>
+      <button>{children}</button>
     </Link>
   );
 }

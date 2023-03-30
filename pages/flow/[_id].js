@@ -20,7 +20,7 @@ export default function DetailsPage({ poses }) {
   return (
     <>
       <AppropriateFlow poses={poses} flow={flow} />
-      <Button />
+      <Button href="/">Fertig</Button>
     </>
   );
 }
