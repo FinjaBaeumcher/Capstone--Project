@@ -1,5 +1,5 @@
 import Heading from "../components/Heading";
-import RandomPoses from "../components/random-poses";
+import RandomPoses from "../components/RandomPoses";
 
 export default function Home({ poses }) {
   return (
