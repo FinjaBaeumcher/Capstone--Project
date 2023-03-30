@@ -3,7 +3,7 @@ export default function AppropriateFlow({ poses, flow }) {
 
   return (
     <article key={poses._id}>
-      <h1>{name}</h1>
+      <h2>{name}</h2>
       <p>{description}</p>
       <p>{time}</p>
     </article>
