@@ -6,7 +6,6 @@ export default function Home({ poses }) {
   return (
     <main>
       <Heading>Yoga App</Heading>
-      <Link href="/flowList">FlowList</Link>
       <RandomPoses poses={poses} />
     </main>
   );

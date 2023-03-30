@@ -19,15 +19,17 @@ export default function RandomPoses({ poses }) {
     }
     return [random1, random2, random3];
   }
+
   return (
     <>
-      {randomPractice.map((randomPractice) => (
+      {randomPractice.map((randomIndex) => (
         <RandomPractices
-          key={poses[randomPractice].id}
-          name={poses[randomPractice].english_name}
-          description={poses[randomPractice].pose_description}
-          image={poses[randomPractice].url_svg}
-          alt={poses[randomPractice].url_svg_alt}
+          key={poses[randomIndex]._id}
+          name={poses[randomIndex].peakPose}
+          description={poses[randomIndex].sanskrit_name_adapted}
+          image={poses[randomIndex].url_svg}
+          alt={poses[randomIndex].url_svg_alt}
+          pose={poses[randomIndex]}
         />
       ))}
     </>
