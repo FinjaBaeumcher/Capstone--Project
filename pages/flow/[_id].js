@@ -1,5 +1,6 @@
 import AppropriateFlow from "../../components/AppropriateFlow";
 import { useRouter } from "next/router";
+import Button from "../../components/Button";
 
 export default function DetailsPage({ poses }) {
   const router = useRouter();
@@ -16,5 +17,10 @@ export default function DetailsPage({ poses }) {
   }
   const flow = poses[flowIndex];
 
-  return <AppropriateFlow poses={poses} flow={flow} />;
+  return (
+    <>
+      <AppropriateFlow poses={poses} flow={flow} />
+      <Button />
+    </>
+  );
 }
