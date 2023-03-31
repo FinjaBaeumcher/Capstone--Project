@@ -1,4 +1,5 @@
 import EmojiButtons from "../../components/EmojiButton";
+import Button from "../../components/Button";
 
 export default function Rating() {
   return (
@@ -7,6 +8,7 @@ export default function Rating() {
       <EmojiButtons />
       <h2>Wie fühlt sich dein Körper?</h2>
       <EmojiButtons />
+      <Button href="/">Speichern</Button>
     </>
   );
 }
