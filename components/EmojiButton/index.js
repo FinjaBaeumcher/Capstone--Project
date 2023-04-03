@@ -1,7 +1,16 @@
-export default function EmojiButtons() {
+import { useState } from "react";
+
+export default function EmojiButton({ onChange }) {
+  const [evaluation, setEvaluation] = useState("");
+
   function handleClick(event) {
     const evaluation = event.target.textContent;
+    setEvaluation(evaluation);
+    onChange(evaluation);
+    console.log(evaluation);
+    localStorage.setItem("mood", JSON.stringify({ evaluation }));
   }
+
   return (
     <>
       <section>
@@ -33,6 +42,7 @@ export default function EmojiButtons() {
           <span>🥳</span>
         </button>
       </section>
+      <p>{evaluation}</p>
     </>
   );
 }
