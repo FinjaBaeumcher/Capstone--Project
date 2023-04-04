@@ -1,16 +1,23 @@
-import { useRouter } from "next/router";
-
 export default function ProgressList() {
-  const router = useRouter();
-  const saveEvaluation = localStorage.getItem("mood");
+  const storedMoods = JSON.parse(localStorage.getItem("moods")) || [];
 
-  if (!saveEvaluation) {
+  if (!storedMoods.length) {
     return <h2>No Content yet...</h2>;
+  }
+
+  if (!Array.isArray(storedMoods)) {
+    return <h2>No Content</h2>;
   }
 
   return (
     <>
-      <p>Deine Stimmung: {saveEvaluation}</p>
+      <ul>
+        {storedMoods.map((entry, index) => (
+          <li key={index}>
+            Stimmung: {entry.mood}, Körperliches Wohlbefinden: {entry.body}
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
