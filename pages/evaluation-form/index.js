@@ -8,6 +8,12 @@ export default function EvaluationForm({ moods, setMoods }) {
   const [body, setBody] = useState("");
 
   function handleSave() {
+    if (!mood || !body) {
+      alert(
+        "Bitte schätze deine Stimmung und dein körperliches Wohlbefinden ein!"
+      );
+      return;
+    }
     const currentDate = new Date().toLocaleDateString();
     setMoods([...moods, { mood, body, date: currentDate }]);
     router.push(`/progress-list`);
@@ -33,6 +39,7 @@ export default function EvaluationForm({ moods, setMoods }) {
       <EmojiButton emoji="😊" onChange={handleMoodChange} />
       <EmojiButton emoji="😁" onChange={handleMoodChange} />
       <EmojiButton emoji="🥳" onChange={handleMoodChange} />
+      <p>{mood}</p>
 
       <h2>Wie fühlt sich dein Körper?</h2>
       <EmojiButton emoji="😤" onChange={handleBodyChange} />
@@ -44,6 +51,8 @@ export default function EvaluationForm({ moods, setMoods }) {
       <EmojiButton emoji="😊" onChange={handleBodyChange} />
       <EmojiButton emoji="😁" onChange={handleBodyChange} />
       <EmojiButton emoji="🥳" onChange={handleBodyChange} />
+      <p>{body}</p>
+
       <button onClick={handleSave}>Speichern</button>
     </>
   );
