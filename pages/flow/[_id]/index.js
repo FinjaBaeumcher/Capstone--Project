@@ -1,6 +1,6 @@
-import AppropriateFlow from "../../components/AppropriateFlow";
+import AppropriateFlow from "../../../components/AppropriateFlow";
 import { useRouter } from "next/router";
-import Button from "../../components/Button";
+import Button from "../../../components/Button";
 
 export default function DetailsPage({ poses }) {
   const router = useRouter();
@@ -20,7 +20,7 @@ export default function DetailsPage({ poses }) {
   return (
     <>
       <AppropriateFlow poses={poses} flow={flow} />
-      <Button />
+      <Button href="/evaluation-form">Fertig</Button>
     </>
   );
 }
