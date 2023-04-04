@@ -1,3 +1,4 @@
+import Button from "../../components/Button";
 export default function ProgressList() {
   const storedMoods = JSON.parse(localStorage.getItem("moods")) || [];
 
@@ -11,6 +12,7 @@ export default function ProgressList() {
 
   return (
     <>
+      <h2>Meine Stimmungen:</h2>
       <ul>
         {storedMoods.map((entry, index) => (
           <li key={index}>
@@ -19,6 +21,7 @@ export default function ProgressList() {
           </li>
         ))}
       </ul>
+      <Button href="/">Homepage</Button>
     </>
   );
 }
