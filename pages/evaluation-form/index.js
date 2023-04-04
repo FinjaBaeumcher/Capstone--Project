@@ -8,8 +8,9 @@ export default function EvaluationForm({ moods, setMoods }) {
   const [body, setBody] = useState("");
 
   function handleSave() {
-    setMoods([...moods, { mood, body }]);
-    router.push(`/progressList`);
+    const currentDate = new Date().toLocaleDateString();
+    setMoods([...moods, { mood, body, date: currentDate }]);
+    router.push(`/progress-list`);
   }
 
   function handleMoodChange(newMood) {
