@@ -7,6 +7,7 @@ export default function Home({ poses }) {
     <main>
       <Heading>Yoga App</Heading>
       <Link href="/progress-list">Meine Stimmungen</Link>
+      <p>Wähle eine Peak Pose:</p>
       <RandomPoses poses={poses} />
     </main>
   );
