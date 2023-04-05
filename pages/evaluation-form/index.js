@@ -79,11 +79,11 @@ export default function EvaluationForm({ moods, setMoods }) {
           Wie lange habe ich durchgehalten:
         </InputField>
         <p>Minuten</p>
-      </form>
 
-      <button type="submit" onClick={handleSave}>
-        Speichern
-      </button>
+        <button type="submit" onClick={handleSave}>
+          Speichern
+        </button>
+      </form>
       {error && <p>{error}</p>}
     </>
   );
