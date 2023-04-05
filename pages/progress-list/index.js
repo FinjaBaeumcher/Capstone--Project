@@ -17,7 +17,7 @@ export default function ProgressList() {
         {storedMoods.map((entry, index) => (
           <li key={index}>
             {entry.date}: Stimmung: {entry.mood}, Körperliches Wohlbefinden:{" "}
-            {entry.body}, Zeit: {entry.duration} Minuten
+            {entry.body}, Ich habe {entry.duration} Minuten Yoga gemacht.
           </li>
         ))}
       </ul>
