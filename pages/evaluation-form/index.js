@@ -37,9 +37,14 @@ export default function EvaluationForm({ moods, setMoods }) {
 
   function handleTimeChange(event) {
     const input = event.target.value;
+    if (input < 0 || isNaN(input)) {
+      setError("Gebe eine positive Zahl ein");
+      setDuration("");
+      return;
+    }
     const limit = 3;
-    console.log(input);
     setDuration(input.slice(0, limit));
+    setError("");
   }
 
   return (
@@ -79,11 +84,11 @@ export default function EvaluationForm({ moods, setMoods }) {
           Wie lange habe ich durchgehalten:
         </InputField>
         <p>Minuten</p>
-
-        <button type="submit" onClick={handleSave}>
-          Speichern
-        </button>
       </form>
+      <button type="submit" onClick={handleSave}>
+        Speichern
+      </button>
+
       {error && <p>{error}</p>}
     </>
   );
