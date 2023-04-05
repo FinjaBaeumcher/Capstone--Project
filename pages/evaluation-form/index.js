@@ -67,18 +67,19 @@ export default function EvaluationForm({ moods, setMoods }) {
       <EmojiButton emoji="😁" onChange={handleBodyChange} />
       <EmojiButton emoji="🥳" onChange={handleBodyChange} />
       <p>{body}</p>
-
-      <InputField
-        htmlFor="time"
-        name="time"
-        type="number"
-        id="time"
-        onChange={handleTimeChange}
-        value={duration}
-      >
-        Wie lange habe ich durchgehalten:
-      </InputField>
-      <p>Minuten</p>
+      <form>
+        <InputField
+          htmlFor="time"
+          name="time"
+          type="number"
+          id="time"
+          onChange={handleTimeChange}
+          value={duration}
+        >
+          Wie lange habe ich durchgehalten:
+        </InputField>
+        <p>Minuten</p>
+      </form>
 
       <button type="submit" onClick={handleSave}>
         Speichern

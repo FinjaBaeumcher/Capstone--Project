@@ -8,7 +8,7 @@ export default function InputField({
   onChange,
 }) {
   return (
-    <form>
+    <>
       <label htmlFor={htmlFor}>{children}</label>
       <input
         name={name}
@@ -17,6 +17,6 @@ export default function InputField({
         value={value}
         onChange={onChange}
       />
-    </form>
+    </>
   );
 }
