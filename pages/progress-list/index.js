@@ -18,6 +18,7 @@ export default function ProgressList() {
           <li key={index}>
             {entry.date}: Stimmung: {entry.mood}, Körperliches Wohlbefinden:{" "}
             {entry.body}, Zeit: {entry.duration} Minuten
+            {entry.comment && <>, Kommentar:{entry.comment}</>}
           </li>
         ))}
       </ul>
