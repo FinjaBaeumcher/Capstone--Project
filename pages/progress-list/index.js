@@ -1,12 +1,10 @@
 import Button from "../../components/Button";
-export default function ProgressList() {
-  const storedMoods = JSON.parse(localStorage.getItem("moods")) || [];
-
-  if (!storedMoods.length) {
+export default function ProgressList({ moods }) {
+  if (!moods.length) {
     return <h2>No Content yet...</h2>;
   }
 
-  if (!Array.isArray(storedMoods)) {
+  if (!Array.isArray(moods)) {
     return <h2>No Content</h2>;
   }
 
@@ -14,10 +12,11 @@ export default function ProgressList() {
     <>
       <h2>Meine Stimmungen:</h2>
       <ul>
-        {storedMoods.map((entry, index) => (
+        {moods.map((entry, index) => (
           <li key={index}>
             {entry.date}: Stimmung: {entry.mood}, Körperliches Wohlbefinden:{" "}
             {entry.body}, Ich habe {entry.duration} Minuten Yoga gemacht.
+            {entry.comment && <>, Kommentar:{entry.comment}</>}
           </li>
         ))}
       </ul>

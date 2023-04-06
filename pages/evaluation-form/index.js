@@ -1,5 +1,6 @@
 import EmojiButton from "../../components/EmojiButton";
 import InputField from "../../components/InputField";
+import TextArea from "../../components/TextArea";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -8,6 +9,7 @@ export default function EvaluationForm({ moods, setMoods }) {
   const [mood, setMood] = useState("");
   const [body, setBody] = useState("");
   const [duration, setDuration] = useState("");
+  const [comment, setComment] = useState("");
   const [error, setError] = useState("");
 
   function handleSave() {
@@ -23,7 +25,7 @@ export default function EvaluationForm({ moods, setMoods }) {
     }
 
     const currentDate = new Date().toLocaleDateString();
-    setMoods([...moods, { mood, body, duration, date: currentDate }]);
+    setMoods([...moods, { mood, body, duration, comment, date: currentDate }]);
     router.push(`/progress-list`);
   }
 
@@ -45,6 +47,12 @@ export default function EvaluationForm({ moods, setMoods }) {
     const limit = 3;
     setDuration(input.slice(0, limit));
     setError("");
+  }
+
+  function handleCommentChange(event) {
+    const commentInput = event.target.value;
+    const textLimit = 200;
+    setComment(commentInput.slice(0, textLimit));
   }
 
   return (
@@ -85,6 +93,17 @@ export default function EvaluationForm({ moods, setMoods }) {
           Wie lange habe ich durchgehalten:
         </InputField>
         <p>Minuten</p>
+        <TextArea
+          htmlFor="comment"
+          name="comment"
+          type="text"
+          id="comment"
+          placeholder="Weitere Anmerkungen..."
+          onChange={handleCommentChange}
+          value={comment}
+        >
+          Kommentar:
+        </TextArea>
       </form>
       <button type="submit" onClick={handleSave}>
         Speichern
