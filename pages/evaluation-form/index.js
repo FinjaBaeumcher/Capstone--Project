@@ -57,7 +57,8 @@ export default function EvaluationForm({ moods, setMoods }) {
 
   return (
     <>
-      <h2>Wie ist deine Stimmung heute?</h2>
+      <h2>Wie war die Session?</h2>
+      <h3>Wie ist deine Stimmung heute?</h3>
       <EmojiButton emoji="😤" onChange={handleMoodChange} />
       <EmojiButton emoji="😭" onChange={handleMoodChange} />
       <EmojiButton emoji="😩" onChange={handleMoodChange} />
@@ -69,7 +70,7 @@ export default function EvaluationForm({ moods, setMoods }) {
       <EmojiButton emoji="🥳" onChange={handleMoodChange} />
       <p>{mood}</p>
 
-      <h2>Wie fühlt sich dein Körper?</h2>
+      <h3>Wie fühlt sich dein Körper?</h3>
       <EmojiButton emoji="😤" onChange={handleBodyChange} />
       <EmojiButton emoji="😭" onChange={handleBodyChange} />
       <EmojiButton emoji="😩" onChange={handleBodyChange} />
