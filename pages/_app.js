@@ -13,6 +13,8 @@ export default function App({ Component, pageProps }) {
     defaultValue: [],
   });
 
+  const currentDate = new Date().toLocaleDateString();
+
   if (error) return <h1>Failed to load</h1>;
   if (isLoading) return <h1>Loading ...</h1>;
 
@@ -28,6 +30,7 @@ export default function App({ Component, pageProps }) {
         poses={poses}
         moods={moods}
         setMoods={setMoods}
+        date={currentDate}
       />
     </>
   );

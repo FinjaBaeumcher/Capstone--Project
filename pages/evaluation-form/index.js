@@ -4,7 +4,7 @@ import TextArea from "../../components/TextArea";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function EvaluationForm({ moods, setMoods }) {
+export default function EvaluationForm({ moods, setMoods, date }) {
   const router = useRouter();
   const [mood, setMood] = useState("");
   const [body, setBody] = useState("");
@@ -24,8 +24,7 @@ export default function EvaluationForm({ moods, setMoods }) {
       return;
     }
 
-    const currentDate = new Date().toLocaleDateString();
-    setMoods([...moods, { mood, body, duration, comment, date: currentDate }]);
+    setMoods([...moods, { mood, body, duration, comment, date }]);
     router.push(`/progress-list`);
   }
 
@@ -57,29 +56,44 @@ export default function EvaluationForm({ moods, setMoods }) {
 
   return (
     <>
-      <h2>Wie war die Session?</h2>
-      <h3>Wie ist deine Stimmung heute?</h3>
-      <EmojiButton emoji="😤" onChange={handleMoodChange} />
-      <EmojiButton emoji="😭" onChange={handleMoodChange} />
-      <EmojiButton emoji="😩" onChange={handleMoodChange} />
-      <EmojiButton emoji="☹️" onChange={handleMoodChange} />
-      <EmojiButton emoji="😕" onChange={handleMoodChange} />
-      <EmojiButton emoji="🙂" onChange={handleMoodChange} />
-      <EmojiButton emoji="😊" onChange={handleMoodChange} />
-      <EmojiButton emoji="😁" onChange={handleMoodChange} />
-      <EmojiButton emoji="🥳" onChange={handleMoodChange} />
+      <h2>Wie ist deine Stimmung heute?</h2>
+      <EmojiButton emoji="😤" ariaLabel="angry" onChange={handleMoodChange} />
+      <EmojiButton emoji="😭" ariaLabel="sad" onChange={handleMoodChange} />
+      <EmojiButton emoji="😩" ariaLabel="annoyed" onChange={handleMoodChange} />
+      <EmojiButton
+        emoji="☹️"
+        ariaLabel="disappointed"
+        onChange={handleMoodChange}
+      />
+      <EmojiButton emoji="😕" ariaLabel="bad" onChange={handleMoodChange} />
+      <EmojiButton emoji="🙂" ariaLabel="neutral" onChange={handleMoodChange} />
+      <EmojiButton
+        emoji="😊"
+        ariaLabel="cheerful"
+        onChange={handleMoodChange}
+      />
+      <EmojiButton emoji="😁" ariaLabel="happy" onChange={handleMoodChange} />
+      <EmojiButton emoji="🥳" ariaLabel="party" onChange={handleMoodChange} />
       <p>{mood}</p>
 
-      <h3>Wie fühlt sich dein Körper?</h3>
-      <EmojiButton emoji="😤" onChange={handleBodyChange} />
-      <EmojiButton emoji="😭" onChange={handleBodyChange} />
-      <EmojiButton emoji="😩" onChange={handleBodyChange} />
-      <EmojiButton emoji="☹️" onChange={handleBodyChange} />
-      <EmojiButton emoji="😕" onChange={handleBodyChange} />
-      <EmojiButton emoji="🙂" onChange={handleBodyChange} />
-      <EmojiButton emoji="😊" onChange={handleBodyChange} />
-      <EmojiButton emoji="😁" onChange={handleBodyChange} />
-      <EmojiButton emoji="🥳" onChange={handleBodyChange} />
+      <h2>Wie fühlt sich dein Körper?</h2>
+      <EmojiButton emoji="😤" ariaLabel="angry" onChange={handleBodyChange} />
+      <EmojiButton emoji="😭" ariaLabel="sad" onChange={handleBodyChange} />
+      <EmojiButton emoji="😩" ariaLabel="annoyed" onChange={handleBodyChange} />
+      <EmojiButton
+        emoji="☹️"
+        ariaLabel="disappointed"
+        onChange={handleBodyChange}
+      />
+      <EmojiButton emoji="😕" ariaLabel="bad" onChange={handleBodyChange} />
+      <EmojiButton emoji="🙂" ariaLabel="neutral" onChange={handleBodyChange} />
+      <EmojiButton
+        emoji="😊"
+        ariaLabel="cheerful"
+        onChange={handleBodyChange}
+      />
+      <EmojiButton emoji="😁" ariaLabel="happy" onChange={handleBodyChange} />
+      <EmojiButton emoji="🥳" ariaLabel="party" onChange={handleBodyChange} />
       <p>{body}</p>
       <form>
         <InputField

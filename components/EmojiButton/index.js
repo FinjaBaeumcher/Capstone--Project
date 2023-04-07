@@ -1,4 +1,4 @@
-export default function EmojiButton({ emoji, onChange }) {
+export default function EmojiButton({ emoji, onChange, ariaLabel }) {
   function handleClick(event) {
     const evaluation = event.target.textContent;
     onChange(evaluation);
@@ -7,7 +7,9 @@ export default function EmojiButton({ emoji, onChange }) {
   return (
     <>
       <button onClick={handleClick}>
-        <span>{emoji}</span>
+        <span role="img" aria-label={ariaLabel}>
+          {emoji}
+        </span>
       </button>
     </>
   );
