@@ -46,7 +46,7 @@ export default function ProgressList({ moods, setMoods }) {
             ) : (
               <>
                 Stimmung: {entry.mood}, Körperliches Wohlbefinden: {entry.body},
-                Zeit: {entry.duration} Minuten
+                Ich habe {entry.duration} Minuten Yoga gemacht.
                 {entry.comment && <>, Kommentar:{entry.comment}</>}
                 <button onClick={() => handleEdit(index)}>✏️</button>
               </>
