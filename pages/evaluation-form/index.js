@@ -4,7 +4,7 @@ import TextArea from "../../components/TextArea";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function EvaluationForm({ moods, setMoods }) {
+export default function EvaluationForm({ moods, setMoods, date }) {
   const router = useRouter();
   const [mood, setMood] = useState("");
   const [body, setBody] = useState("");
@@ -24,8 +24,7 @@ export default function EvaluationForm({ moods, setMoods }) {
       return;
     }
 
-    const currentDate = new Date().toLocaleDateString();
-    setMoods([...moods, { mood, body, duration, comment, date: currentDate }]);
+    setMoods([...moods, { mood, body, duration, comment, date }]);
     router.push(`/progress-list`);
   }
 

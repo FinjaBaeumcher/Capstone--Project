@@ -11,8 +11,14 @@ export default function ProgressList({ moods, setMoods }) {
 
   const handleSave = (index, updatedEntry) => {
     const updatedMoods = [...moods];
-    const currentDate = new Date().toLocaleDateString();
-    updatedMoods[index] = { ...updatedEntry, date: currentDate };
+    updatedMoods.map((entry, i) => {
+      if (i === index) {
+        return (updatedMoods[i] = { ...updatedEntry, date: entry.date });
+      } else {
+        return entry;
+      }
+    });
+
     setMoods(updatedMoods);
     setEditedIndex(null);
   };
@@ -31,6 +37,7 @@ export default function ProgressList({ moods, setMoods }) {
       <ul>
         {moods.map((entry, index) => (
           <li key={index}>
+            <p>{entry.date}:</p>
             {editedIndex === index ? (
               <EditForm
                 entry={entry}
@@ -38,8 +45,8 @@ export default function ProgressList({ moods, setMoods }) {
               />
             ) : (
               <>
-                {entry.date}: Stimmung: {entry.mood}, Körperliches Wohlbefinden:{" "}
-                {entry.body}, Zeit: {entry.duration} Minuten
+                Stimmung: {entry.mood}, Körperliches Wohlbefinden: {entry.body},
+                Zeit: {entry.duration} Minuten
                 {entry.comment && <>, Kommentar:{entry.comment}</>}
                 <button onClick={() => handleEdit(index)}>✏️</button>
               </>
