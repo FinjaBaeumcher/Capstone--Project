@@ -25,27 +25,117 @@ export default function EditForm({ entry, onSubmit }) {
   return (
     <>
       <p>Stimmung:</p>
-      <EmojiButton emoji="😤" name="mood" onChange={handleMoodChange} />
-      <EmojiButton emoji="😭" name="mood" onChange={handleMoodChange} />
-      <EmojiButton emoji="😩" name="mood" onChange={handleMoodChange} />
-      <EmojiButton emoji="☹️" name="mood" onChange={handleMoodChange} />
-      <EmojiButton emoji="😕" name="mood" onChange={handleMoodChange} />
-      <EmojiButton emoji="🙂" name="mood" onChange={handleMoodChange} />
-      <EmojiButton emoji="😊" name="mood" onChange={handleMoodChange} />
-      <EmojiButton emoji="😁" name="mood" onChange={handleMoodChange} />
-      <EmojiButton emoji="🥳" name="mood" onChange={handleMoodChange} />
+      <EmojiButton
+        emoji="😤"
+        ariaLabel="angry"
+        name="mood"
+        onChange={handleMoodChange}
+      />
+      <EmojiButton
+        emoji="😭"
+        ariaLabel="sad"
+        name="mood"
+        onChange={handleMoodChange}
+      />
+      <EmojiButton
+        emoji="😩"
+        ariaLabel="annoyed"
+        name="mood"
+        onChange={handleMoodChange}
+      />
+      <EmojiButton
+        emoji="☹️"
+        ariaLabel="disappointed"
+        name="mood"
+        onChange={handleMoodChange}
+      />
+      <EmojiButton
+        emoji="😕"
+        ariaLabel="bad"
+        name="mood"
+        onChange={handleMoodChange}
+      />
+      <EmojiButton
+        emoji="🙂"
+        ariaLabel="neutral"
+        name="mood"
+        onChange={handleMoodChange}
+      />
+      <EmojiButton
+        emoji="😊"
+        ariaLabel="cheerful"
+        name="mood"
+        onChange={handleMoodChange}
+      />
+      <EmojiButton
+        emoji="😁"
+        ariaLabel="happy"
+        name="mood"
+        onChange={handleMoodChange}
+      />
+      <EmojiButton
+        emoji="🥳"
+        ariaLabel="party"
+        name="mood"
+        onChange={handleMoodChange}
+      />
       <p>{mood}</p>
 
       <p>Körperliches Wohlbefinden:</p>
-      <EmojiButton emoji="😤" name="body" onChange={handleBodyChange} />
-      <EmojiButton emoji="😭" name="body" onChange={handleBodyChange} />
-      <EmojiButton emoji="😩" name="body" onChange={handleBodyChange} />
-      <EmojiButton emoji="☹️" name="body" onChange={handleBodyChange} />
-      <EmojiButton emoji="😕" name="body" onChange={handleBodyChange} />
-      <EmojiButton emoji="🙂" name="body" onChange={handleBodyChange} />
-      <EmojiButton emoji="😊" name="body" onChange={handleBodyChange} />
-      <EmojiButton emoji="😁" name="body" onChange={handleBodyChange} />
-      <EmojiButton emoji="🥳" name="body" onChange={handleBodyChange} />
+      <EmojiButton
+        emoji="😤"
+        ariaLabel="angry"
+        name="body"
+        onChange={handleBodyChange}
+      />
+      <EmojiButton
+        emoji="😭"
+        ariaLabel="sad"
+        name="body"
+        onChange={handleBodyChange}
+      />
+      <EmojiButton
+        emoji="😩"
+        ariaLabel="annoyed"
+        name="body"
+        onChange={handleBodyChange}
+      />
+      <EmojiButton
+        emoji="☹️"
+        ariaLabel="disappointed"
+        name="body"
+        onChange={handleBodyChange}
+      />
+      <EmojiButton
+        emoji="😕"
+        ariaLabel="bad"
+        name="body"
+        onChange={handleBodyChange}
+      />
+      <EmojiButton
+        emoji="🙂"
+        ariaLabel="neutral"
+        name="body"
+        onChange={handleBodyChange}
+      />
+      <EmojiButton
+        emoji="😊"
+        ariaLabel="cheerful"
+        name="body"
+        onChange={handleBodyChange}
+      />
+      <EmojiButton
+        emoji="😁"
+        ariaLabel="happy"
+        name="body"
+        onChange={handleBodyChange}
+      />
+      <EmojiButton
+        emoji="🥳"
+        ariaLabel="party"
+        name="body"
+        onChange={handleBodyChange}
+      />
       <p>{body}</p>
 
       <form onSubmit={handleSubmit}>

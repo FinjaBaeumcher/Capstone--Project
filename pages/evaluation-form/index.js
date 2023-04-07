@@ -57,27 +57,43 @@ export default function EvaluationForm({ moods, setMoods, date }) {
   return (
     <>
       <h2>Wie ist deine Stimmung heute?</h2>
-      <EmojiButton emoji="😤" onChange={handleMoodChange} />
-      <EmojiButton emoji="😭" onChange={handleMoodChange} />
-      <EmojiButton emoji="😩" onChange={handleMoodChange} />
-      <EmojiButton emoji="☹️" onChange={handleMoodChange} />
-      <EmojiButton emoji="😕" onChange={handleMoodChange} />
-      <EmojiButton emoji="🙂" onChange={handleMoodChange} />
-      <EmojiButton emoji="😊" onChange={handleMoodChange} />
-      <EmojiButton emoji="😁" onChange={handleMoodChange} />
-      <EmojiButton emoji="🥳" onChange={handleMoodChange} />
+      <EmojiButton emoji="😤" ariaLabel="angry" onChange={handleMoodChange} />
+      <EmojiButton emoji="😭" ariaLabel="sad" onChange={handleMoodChange} />
+      <EmojiButton emoji="😩" ariaLabel="annoyed" onChange={handleMoodChange} />
+      <EmojiButton
+        emoji="☹️"
+        ariaLabel="disappointed"
+        onChange={handleMoodChange}
+      />
+      <EmojiButton emoji="😕" ariaLabel="bad" onChange={handleMoodChange} />
+      <EmojiButton emoji="🙂" ariaLabel="neutral" onChange={handleMoodChange} />
+      <EmojiButton
+        emoji="😊"
+        ariaLabel="cheerful"
+        onChange={handleMoodChange}
+      />
+      <EmojiButton emoji="😁" ariaLabel="happy" onChange={handleMoodChange} />
+      <EmojiButton emoji="🥳" ariaLabel="party" onChange={handleMoodChange} />
       <p>{mood}</p>
 
       <h2>Wie fühlt sich dein Körper?</h2>
-      <EmojiButton emoji="😤" onChange={handleBodyChange} />
-      <EmojiButton emoji="😭" onChange={handleBodyChange} />
-      <EmojiButton emoji="😩" onChange={handleBodyChange} />
-      <EmojiButton emoji="☹️" onChange={handleBodyChange} />
-      <EmojiButton emoji="😕" onChange={handleBodyChange} />
-      <EmojiButton emoji="🙂" onChange={handleBodyChange} />
-      <EmojiButton emoji="😊" onChange={handleBodyChange} />
-      <EmojiButton emoji="😁" onChange={handleBodyChange} />
-      <EmojiButton emoji="🥳" onChange={handleBodyChange} />
+      <EmojiButton emoji="😤" ariaLabel="angry" onChange={handleBodyChange} />
+      <EmojiButton emoji="😭" ariaLabel="sad" onChange={handleBodyChange} />
+      <EmojiButton emoji="😩" ariaLabel="annoyed" onChange={handleBodyChange} />
+      <EmojiButton
+        emoji="☹️"
+        ariaLabel="disappointed"
+        onChange={handleBodyChange}
+      />
+      <EmojiButton emoji="😕" ariaLabel="bad" onChange={handleBodyChange} />
+      <EmojiButton emoji="🙂" ariaLabel="neutral" onChange={handleBodyChange} />
+      <EmojiButton
+        emoji="😊"
+        ariaLabel="cheerful"
+        onChange={handleBodyChange}
+      />
+      <EmojiButton emoji="😁" ariaLabel="happy" onChange={handleBodyChange} />
+      <EmojiButton emoji="🥳" ariaLabel="party" onChange={handleBodyChange} />
       <p>{body}</p>
       <form>
         <InputField
