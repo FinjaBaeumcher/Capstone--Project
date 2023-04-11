@@ -11,11 +11,9 @@ export default function Button({ children, href }) {
 
 const StyledButton = styled.button`
   background-color: yellowgreen;
+  color: white;
   border: none;
   padding: 8px 15px;
-  color: white;
   margin: 10px;
   margin-bottom: 10px;
-  position: absolute;
-  right: 0px;
 `;

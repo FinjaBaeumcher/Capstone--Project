@@ -1,4 +1,5 @@
 import Button from "../../components/Button";
+import Link from "next/link";
 import EditForm from "../../components/EditForm";
 import { useState } from "react";
 import styled from "styled-components";
@@ -41,12 +42,13 @@ export default function ProgressList({ moods, setMoods }) {
 
   return (
     <>
-      <h2>Meine Stimmungen:</h2>
+      <StyledHeading>Meine Stimmungen:</StyledHeading>
       <ul>
         {moods.map((entry, index) => (
-          <li key={index}>
+          <StyledListItem key={index}>
             <StyledDate>
-              {entry.weekday},{entry.date}:
+              {entry.weekday}
+              {entry.date}:
             </StyledDate>
             {editedIndex === index ? (
               <EditForm
@@ -67,13 +69,17 @@ export default function ProgressList({ moods, setMoods }) {
                     <StyledComment>{entry.comment}</StyledComment>
                   </>
                 )}
-                <button onClick={() => handleEdit(index)}>✏️</button>
+                <StyledEditButton onClick={() => handleEdit(index)}>
+                  ✏️
+                </StyledEditButton>
               </section>
             )}
-          </li>
+          </StyledListItem>
         ))}
       </ul>
-      <Button href="/">Homepage</Button>
+      <HomepageButton>
+        <Button href="/">Homepage</Button>
+      </HomepageButton>
     </>
   );
 }
@@ -87,7 +93,7 @@ const StyledDate = styled.h3`
 `;
 
 const StyledComment = styled.p`
-  background-color: lavender;
+  background-color: lightgrey;
   border: gray 3px solid;
   border-radius: 8px;
   padding: 10px;
@@ -100,4 +106,40 @@ const StyledComment = styled.p`
 const StyledText = styled.p`
   display: flex;
   justify-content: center;
+`;
+
+const StyledListItem = styled.li`
+  position: relative;
+  background-color: lavender;
+  border: gray 1px solid;
+  border-radius: 8px;
+  padding: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 10px;
+  list-style: none;
+`;
+
+const StyledEditButton = styled.div`
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border: none;
+  font-size: 18px;
+  background-color: purple;
+  padding: 2px 5px;
+  border-radius: 360px;
+`;
+
+const HomepageButton = styled.div`
+  position: absolute;
+  top: 0px;
+  right: 0px;
+`;
+
+const StyledHeading = styled.h2`
+  margin: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: purple;
 `;
