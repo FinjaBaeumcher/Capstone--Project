@@ -1,6 +1,10 @@
 import Button from "../../components/Button";
 import EditForm from "../../components/EditForm";
 import { useState } from "react";
+import styled from "styled-components";
+import { Dancing_Script } from "@next/font/google";
+
+const dacingScript = Dancing_Script({ subsets: ["latin"] });
 
 export default function ProgressList({ moods, setMoods }) {
   const [editedIndex, setEditedIndex] = useState(null);
@@ -13,7 +17,11 @@ export default function ProgressList({ moods, setMoods }) {
     const updatedMoods = [...moods];
     updatedMoods.map((entry, i) => {
       if (i === index) {
-        return (updatedMoods[i] = { ...updatedEntry, date: entry.date });
+        return (updatedMoods[i] = {
+          ...updatedEntry,
+          date: entry.date,
+          weekday: entry.weekday,
+        });
       } else {
         return entry;
       }
@@ -37,19 +45,30 @@ export default function ProgressList({ moods, setMoods }) {
       <ul>
         {moods.map((entry, index) => (
           <li key={index}>
-            <p>{entry.date}:</p>
+            <StyledDate>
+              {entry.weekday},{entry.date}:
+            </StyledDate>
             {editedIndex === index ? (
               <EditForm
                 entry={entry}
                 onSubmit={(updatedEntry) => handleSave(index, updatedEntry)}
               />
             ) : (
-              <>
-                Stimmung: {entry.mood}, Körperliches Wohlbefinden: {entry.body},
-                Ich habe {entry.duration} Minuten Yoga gemacht.
-                {entry.comment && <>, Kommentar:{entry.comment}</>}
+              <section>
+                <StyledText>
+                  Ich habe {entry.duration} Minuten Yoga gemacht.
+                </StyledText>
+                <StyledText>Stimmung: {entry.mood}</StyledText>
+                <StyledText>Körperliches Wohlbefinden:{entry.body}</StyledText>
+
+                {entry.comment && (
+                  <>
+                    <p>Kommentar:</p>
+                    <StyledComment>{entry.comment}</StyledComment>
+                  </>
+                )}
                 <button onClick={() => handleEdit(index)}>✏️</button>
-              </>
+              </section>
             )}
           </li>
         ))}
@@ -58,3 +77,27 @@ export default function ProgressList({ moods, setMoods }) {
     </>
   );
 }
+
+const StyledDate = styled.h3`
+  display: flex;
+  justify-content: center;
+  font-family: ${dacingScript.style.fontFamily};
+  color: purple;
+  margin: 20px;
+`;
+
+const StyledComment = styled.p`
+  background-color: lavender;
+  border: gray 3px solid;
+  border-radius: 8px;
+  padding: 10px;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-top: 10px;
+  overflow-wrap: break-word;
+`;
+
+const StyledText = styled.p`
+  display: flex;
+  justify-content: center;
+`;

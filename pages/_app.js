@@ -14,6 +14,16 @@ export default function App({ Component, pageProps }) {
   });
 
   const currentDate = new Date().toLocaleDateString();
+  const weekday = [
+    "Sonntag",
+    "Montag",
+    "Dienstag",
+    "Mittwoch",
+    "Donnerstag",
+    "Freitag",
+    "Samstag",
+  ];
+  const day = weekday[new Date().getDay()];
 
   if (error) return <h1>Failed to load</h1>;
   if (isLoading) return <h1>Loading ...</h1>;
@@ -31,6 +41,7 @@ export default function App({ Component, pageProps }) {
         moods={moods}
         setMoods={setMoods}
         date={currentDate}
+        weekday={day}
       />
     </>
   );
