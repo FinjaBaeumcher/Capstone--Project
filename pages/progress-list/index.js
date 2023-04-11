@@ -32,6 +32,17 @@ export default function ProgressList({ moods, setMoods }) {
     setEditedIndex(null);
   };
 
+  const handleDelete = (index) => {
+    const confirmDelete = window.confirm(
+      "Bist du sicher, dass du diesen Eintrag löschen möchtest?"
+    );
+    if (confirmDelete) {
+      const updatedMoods = moods.slice();
+      updatedMoods.splice(index, 1);
+      setMoods(updatedMoods);
+    }
+  };
+
   if (!moods.length) {
     return <h2>No Content yet...</h2>;
   }
@@ -71,6 +82,9 @@ export default function ProgressList({ moods, setMoods }) {
                 )}
                 <StyledEditButton onClick={() => handleEdit(index)}>
                   ✏️
+                </StyledEditButton>
+                <StyledEditButton onClick={() => handleDelete(index)}>
+                  🗑️
                 </StyledEditButton>
               </section>
             )}
