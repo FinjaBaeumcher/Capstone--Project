@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export default function TextArea({
   children,
   name,
@@ -10,7 +12,7 @@ export default function TextArea({
   return (
     <>
       <label htmlFor={htmlFor}>{children}</label>
-      <textarea
+      <StyledTextArea
         name={name}
         id={id}
         placeholder={placeholder}
@@ -20,3 +22,10 @@ export default function TextArea({
     </>
   );
 }
+
+const StyledTextArea = styled.textarea`
+  padding: 30px 80px;
+  margin: 20px;
+  border: 2px gray solid;
+  border-radius: 8px;
+`;

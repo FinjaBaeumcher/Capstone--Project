@@ -1,4 +1,5 @@
 import EmojiButton from "../../components/EmojiButton";
+import Button from "../../components/Button";
 import InputField from "../../components/InputField";
 import TextArea from "../../components/TextArea";
 import { useRouter } from "next/router";
@@ -125,9 +126,9 @@ export default function EvaluationForm({ moods, setMoods, date }) {
           onChange={handleTimeChange}
           value={duration}
         >
-          <StyledHeading>Wie lange habe ich durchgehalten:</StyledHeading>
+          <StyledHeading>Wie lange hast du heute durchgehalten?</StyledHeading>
         </InputField>
-        <p>Minuten</p>
+        <p> Minuten</p>
         <TextArea
           htmlFor="comment"
           name="comment"
@@ -144,7 +145,7 @@ export default function EvaluationForm({ moods, setMoods, date }) {
         Speichern
       </button>
 
-      {error && <p>{error}</p>}
+      {error && <StyledError>{error}</StyledError>}
     </>
   );
 }
@@ -156,9 +157,13 @@ const StyledEmojiButtons = styled.section`
 `;
 
 const StyledHeading = styled.h2`
-  font-size: 20px;
+  font-size: 18px;
   margin: 15px;
-  color: purple;
   display: flex;
   justify-content: center;
+`;
+
+const StyledError = styled.p`
+  color: red;
+  margin: 20px;
 `;

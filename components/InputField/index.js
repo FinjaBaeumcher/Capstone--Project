@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export default function InputField({
   children,
   name,
@@ -10,7 +12,7 @@ export default function InputField({
   return (
     <>
       <label htmlFor={htmlFor}>{children}</label>
-      <input
+      <StyledInput
         name={name}
         type={type}
         id={id}
@@ -20,3 +22,7 @@ export default function InputField({
     </>
   );
 }
+
+const StyledInput = styled.input`
+  padding: 0px 0px;
+`;
