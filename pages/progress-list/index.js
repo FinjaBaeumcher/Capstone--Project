@@ -24,9 +24,14 @@ export default function ProgressList({ moods, setMoods }) {
   };
 
   const handleDelete = (index) => {
-    const updatedMoods = moods.slice();
-    updatedMoods.splice(index, 1);
-    setMoods(updatedMoods);
+    const confirmDelete = window.confirm(
+      "Bist du sicher, dass du diesen Eintrag löschen möchtest?"
+    );
+    if (confirmDelete) {
+      const updatedMoods = moods.slice();
+      updatedMoods.splice(index, 1);
+      setMoods(updatedMoods);
+    }
   };
 
   if (!moods.length) {
