@@ -58,8 +58,7 @@ export default function ProgressList({ moods, setMoods }) {
         {moods.map((entry, index) => (
           <StyledListItem key={index}>
             <StyledDate>
-              {entry.weekday}
-              {entry.date}:
+              {entry.weekday}, {entry.date}:
             </StyledDate>
             {editedIndex === index ? (
               <EditForm
@@ -83,9 +82,9 @@ export default function ProgressList({ moods, setMoods }) {
                 <StyledEditButton onClick={() => handleEdit(index)}>
                   ✏️
                 </StyledEditButton>
-                <StyledEditButton onClick={() => handleDelete(index)}>
+                <StyledDeleteButton onClick={() => handleDelete(index)}>
                   🗑️
-                </StyledEditButton>
+                </StyledDeleteButton>
               </section>
             )}
           </StyledListItem>
@@ -135,6 +134,17 @@ const StyledListItem = styled.li`
 `;
 
 const StyledEditButton = styled.div`
+  position: absolute;
+  top: 5px;
+  right: 50px;
+  border: none;
+  font-size: 18px;
+  background-color: purple;
+  padding: 2px 5px;
+  border-radius: 360px;
+`;
+
+const StyledDeleteButton = styled.div`
   position: absolute;
   top: 5px;
   right: 10px;

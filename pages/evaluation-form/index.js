@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import styled from "styled-components";
 
-export default function EvaluationForm({ moods, setMoods, date }) {
+export default function EvaluationForm({ moods, setMoods, date, weekday }) {
   const router = useRouter();
   const [mood, setMood] = useState("");
   const [body, setBody] = useState("");
@@ -26,7 +26,7 @@ export default function EvaluationForm({ moods, setMoods, date }) {
       return;
     }
 
-    setMoods([...moods, { mood, body, duration, comment, date }]);
+    setMoods([...moods, { mood, body, duration, comment, date, weekday }]);
     router.push(`/progress-list`);
   }
 
