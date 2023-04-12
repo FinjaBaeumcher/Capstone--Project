@@ -1,14 +1,9 @@
-import Heading from "../components/Heading";
-import RandomPoses from "../components/RandomPoses";
-import Link from "next/link";
+import FilteredPoses from "../components/FilteredPoses";
 
-export default function Home({ poses }) {
+export default function Homepage({ poses }) {
   return (
-    <main>
-      <Heading>Yoga App</Heading>
-      <Link href="/progress-list">Meine Stimmungen</Link>
-      <p>Wähle eine Peak Pose:</p>
-      <RandomPoses poses={poses} />
-    </main>
+    <>
+      <FilteredPoses poses={poses} />
+    </>
   );
 }
