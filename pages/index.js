@@ -35,6 +35,8 @@ export default function Homepage({ poses }) {
           placeholder="Filter nach Körperteil"
           name="poseFilter"
           type="text"
+          pattern="[A-Za-z\s]+"
+          title="Bitte verwenden Sie nur Buchstaben und Leerzeichen."
           id="poseFilter"
         />
         <datalist id="filter">
@@ -50,7 +52,9 @@ export default function Homepage({ poses }) {
           </>
         </datalist>
       </form>
-      <button onClick={handleButtonClick}>Los</button>
+      <button type="button" onClick={handleButtonClick}>
+        Los
+      </button>
       <button>
         <Link href="/random-peak-pose">Zufällig</Link>
       </button>
