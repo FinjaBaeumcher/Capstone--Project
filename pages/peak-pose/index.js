@@ -11,15 +11,13 @@ export default function PeakPose() {
 
   return (
     <StyledBody>
-      <main>
-        <Heading>Yoga App</Heading>
-        <StyledLink href="/progress-list" role="img" aria-label="calendar">
-          <span>📆</span>
-        </StyledLink>
-        <StyledHeading>{benefit}</StyledHeading>
-        <StyledDescription>Wähle eine Peak Pose:</StyledDescription>
-        <FilteredPoses poses={poses} />
-      </main>
+      <Heading>Yoga App</Heading>
+      <StyledLink href="/progress-list" role="img" aria-label="calendar">
+        <span>📆</span>
+      </StyledLink>
+      <StyledHeading>{benefit}</StyledHeading>
+      <StyledDescription>Wähle eine Peak Pose:</StyledDescription>
+      <FilteredPoses poses={poses} />
     </StyledBody>
   );
 }
