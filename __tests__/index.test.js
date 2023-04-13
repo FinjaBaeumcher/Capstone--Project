@@ -1,4 +1,4 @@
-import Home from "../pages";
+import RandomPeakPose from "../pages/random-peak-pose";
 import { render, screen } from "@testing-library/react";
 
 jest.mock("next/router", () => ({
@@ -11,7 +11,7 @@ jest.mock("next/router", () => ({
 }));
 
 test("test", () => {
-  render(<Home />);
+  render(<RandomPeakPose />);
   const element = screen.getByRole("heading", {
     name: /Yoga App/,
   });
