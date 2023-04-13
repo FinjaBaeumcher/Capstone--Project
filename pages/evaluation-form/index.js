@@ -86,7 +86,7 @@ export default function EvaluationForm({ moods, setMoods, date, weekday }) {
         <EmojiButton emoji="😁" ariaLabel="happy" onChange={handleMoodChange} />
         <EmojiButton emoji="🥳" ariaLabel="party" onChange={handleMoodChange} />
       </StyledEmojiButtons>
-      <p>{mood}</p>
+      <StyledText>{mood}</StyledText>
 
       <StyledHeading>Wie fühlt sich dein Körper?</StyledHeading>
       <StyledEmojiButtons>
@@ -116,7 +116,7 @@ export default function EvaluationForm({ moods, setMoods, date, weekday }) {
         <EmojiButton emoji="😁" ariaLabel="happy" onChange={handleBodyChange} />
         <EmojiButton emoji="🥳" ariaLabel="party" onChange={handleBodyChange} />
       </StyledEmojiButtons>
-      <p>{body}</p>
+      <StyledText>{body}</StyledText>
       <form>
         <InputField
           htmlFor="time"
@@ -128,7 +128,7 @@ export default function EvaluationForm({ moods, setMoods, date, weekday }) {
         >
           <StyledHeading>Wie lange hast du heute durchgehalten?</StyledHeading>
         </InputField>
-        <p> Minuten</p>
+        <StyledText> Minuten</StyledText>
         <TextArea
           htmlFor="comment"
           name="comment"
@@ -141,9 +141,9 @@ export default function EvaluationForm({ moods, setMoods, date, weekday }) {
           <StyledHeading>Kommentar:</StyledHeading>
         </TextArea>
       </form>
-      <button type="submit" onClick={handleSave}>
+      <StyledButton type="submit" onClick={handleSave}>
         Speichern
-      </button>
+      </StyledButton>
 
       {error && <StyledError>{error}</StyledError>}
     </>
@@ -154,6 +154,8 @@ const StyledEmojiButtons = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   margin: 20px;
+  background-image: linear-gradient(90deg, lightcoral 0%, yellowgreen 82%);
+  border-radius: 8px;
 `;
 
 const StyledHeading = styled.h2`
@@ -166,4 +168,20 @@ const StyledHeading = styled.h2`
 const StyledError = styled.p`
   color: red;
   margin: 20px;
+`;
+
+const StyledButton = styled.button`
+  background-color: yellowgreen;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 10px;
+  margin-bottom: 10px;
+`;
+
+const StyledText = styled.p`
+  margin: 10px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
 `;

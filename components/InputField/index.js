@@ -24,5 +24,7 @@ export default function InputField({
 }
 
 const StyledInput = styled.input`
-  padding: 0px 0px;
+  display: flex;
+  justify-item: center;
+  backgrounnd-color: lavender;
 `;

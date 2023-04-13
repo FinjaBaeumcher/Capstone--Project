@@ -28,4 +28,5 @@ const StyledTextArea = styled.textarea`
   margin: 20px;
   border: 2px gray solid;
   border-radius: 8px;
+  background-color: lavender;
 `;
