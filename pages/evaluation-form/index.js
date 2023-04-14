@@ -1,5 +1,4 @@
 import EmojiButton from "../../components/EmojiButton";
-import Button from "../../components/Button";
 import InputField from "../../components/InputField";
 import TextArea from "../../components/TextArea";
 import { useRouter } from "next/router";
@@ -177,6 +176,8 @@ const StyledButton = styled.button`
   padding: 8px 15px;
   margin: 10px;
   margin-bottom: 10px;
+  display: block;
+  margin: 0 auto;
 `;
 
 const StyledText = styled.p`

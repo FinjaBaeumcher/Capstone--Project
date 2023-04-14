@@ -25,6 +25,9 @@ export default function InputField({
 
 const StyledInput = styled.input`
   display: flex;
-  justify-item: center;
-  backgrounnd-color: lavender;
+  margin: 0 auto;
+  padding: 8px;
+  background-color: lavender;
+  border: 2px solid dimgray;
+  border-radius: 8px;
 `;
