@@ -27,6 +27,6 @@ export default function DetailsPage({ poses }) {
 }
 
 const StyledMain = styled.main`
-  background-color: lavender;
+  background-image: linear-gradient(180deg, thistle 0%, lavender 62%);
   background-size: cover;
 `;

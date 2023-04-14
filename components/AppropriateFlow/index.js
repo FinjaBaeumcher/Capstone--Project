@@ -24,7 +24,7 @@ const StyledTime = styled.p`
   margin: 10px;
   border: grey 1px solid;
   padding: 5px;
-  background-color: mediumpurple;
+  background-color: thistle;
   border-radius: 8px;
   font-size: 16px;
 `;
