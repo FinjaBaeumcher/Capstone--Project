@@ -25,8 +25,8 @@ export default function App({ Component, pageProps }) {
   ];
   const day = weekday[new Date().getDay()];
 
-  if (error) return <h1>Failed to load</h1>;
-  if (isLoading) return <h1>Loading ...</h1>;
+  if (error) return <h1>Laden fehlgeschlagen</h1>;
+  if (isLoading) return <h1>Laden ...</h1>;
 
   return (
     <>

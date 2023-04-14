@@ -43,7 +43,15 @@ export default function ProgressList({ moods, setMoods }) {
   };
 
   if (!moods.length) {
-    return <h2>No Content yet...</h2>;
+    return (
+      <>
+        <h2>Noch kein Inhalt</h2>
+        <p>
+          Hier werden deine Stimmungen gespeichert. Diese kannst du eingeben,
+          indem du einen Flow beendest und auf &quot;Fertig&quot; klickst.
+        </p>
+      </>
+    );
   }
 
   if (!Array.isArray(moods)) {
