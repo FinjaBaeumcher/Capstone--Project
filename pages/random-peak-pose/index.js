@@ -11,6 +11,9 @@ export default function RandomPeakPose({ poses }) {
         <StyledLink href="/progress-list" role="img" aria-label="calendar">
           <span>📆</span>
         </StyledLink>
+        <StyledLinkHome href="/" role="img" aria-label="calendar">
+          <span>🏠</span>
+        </StyledLinkHome>
         <StyledHeading>Zufällig</StyledHeading>
         <StyledDescription>Wähle eine Peak Pose:</StyledDescription>
         <RandomPoses poses={poses} />
@@ -27,6 +30,14 @@ const StyledLink = styled(Link)`
   top: 20px;
 `;
 
+const StyledLinkHome = styled(Link)`
+  text-decoration: none;
+  font-size: 26px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+`;
+
 const StyledDescription = styled.p`
   display: flex;
   justify-content: center;
@@ -35,7 +46,7 @@ const StyledDescription = styled.p`
 `;
 
 const StyledBody = styled.main`
-  background-image: linear-gradient(180deg, plum 0%, thistle 82%);
+  background-image: linear-gradient(180deg, thistle 0%, lavender 62%);
 `;
 
 const StyledHeading = styled.h2`

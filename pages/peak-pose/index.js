@@ -49,7 +49,7 @@ const StyledDescription = styled.p`
 `;
 
 const StyledBody = styled.main`
-  background-image: linear-gradient(180deg, plum 0%, thistle 82%);
+  background-image: linear-gradient(180deg, thistle 0%, lavender 62%);
 `;
 
 const StyledHeading = styled.h2`

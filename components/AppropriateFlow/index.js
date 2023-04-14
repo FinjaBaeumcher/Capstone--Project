@@ -12,7 +12,9 @@ export default function AppropriateFlow({ poses, flow }) {
   return (
     <article key={poses._id}>
       <StyledHeading>{name}</StyledHeading>
+      <StyledParagraphs>Anleitung:</StyledParagraphs>
       <StyledDescription>{formatText(description)}</StyledDescription>
+      <StyledParagraphs>Wie viel Zeit sollte ich mir nehmen?</StyledParagraphs>
       <StyledTime>{time}</StyledTime>
     </article>
   );
@@ -39,4 +41,11 @@ const StyledDescription = styled.p`
   font-size: 18px;
   color: dimgray;
   text-align: center;
+`;
+
+const StyledParagraphs = styled.h3`
+  color: purple;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 30px;
 `;
