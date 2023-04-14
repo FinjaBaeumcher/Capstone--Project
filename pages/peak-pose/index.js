@@ -15,6 +15,9 @@ export default function PeakPose() {
       <StyledLink href="/progress-list" role="img" aria-label="calendar">
         <span>📆</span>
       </StyledLink>
+      <StyledLinkHome href="/" role="img" aria-label="calendar">
+        <span>🏠</span>
+      </StyledLinkHome>
       <StyledHeading>{benefit}</StyledHeading>
       <StyledDescription>Wähle eine Peak Pose:</StyledDescription>
       <FilteredPoses poses={poses} />
@@ -27,6 +30,14 @@ const StyledLink = styled(Link)`
   font-size: 26px;
   position: absolute;
   right: 20px;
+  top: 20px;
+`;
+
+const StyledLinkHome = styled(Link)`
+  text-decoration: none;
+  font-size: 26px;
+  position: absolute;
+  left: 20px;
   top: 20px;
 `;
 
