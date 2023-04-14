@@ -1,5 +1,4 @@
 import Button from "../../components/Button";
-import Link from "next/link";
 import EditForm from "../../components/EditForm";
 import { useState } from "react";
 import styled from "styled-components";
@@ -55,40 +54,45 @@ export default function ProgressList({ moods, setMoods }) {
     <>
       <StyledHeading>Meine Stimmungen:</StyledHeading>
       <ul>
-        {moods.map((entry, index) => (
-          <StyledListItem key={index}>
-            <StyledDate>
-              {entry.weekday}, {entry.date}:
-            </StyledDate>
-            {editedIndex === index ? (
-              <EditForm
-                entry={entry}
-                onSubmit={(updatedEntry) => handleSave(index, updatedEntry)}
-              />
-            ) : (
-              <section>
-                <StyledText>
-                  Ich habe {entry.duration} Minuten Yoga gemacht.
-                </StyledText>
-                <StyledText>Stimmung: {entry.mood}</StyledText>
-                <StyledText>Körperliches Wohlbefinden:{entry.body}</StyledText>
+        {moods
+          .slice()
+          .reverse()
+          .map((entry, index) => (
+            <StyledListItem key={index} lastChild={index === moods.length - 1}>
+              <StyledDate>
+                {entry.weekday}, {entry.date}:
+              </StyledDate>
+              {editedIndex === index ? (
+                <EditForm
+                  entry={entry}
+                  onSubmit={(updatedEntry) => handleSave(index, updatedEntry)}
+                />
+              ) : (
+                <section>
+                  <StyledText>
+                    Ich habe {entry.duration} Minuten Yoga gemacht.
+                  </StyledText>
+                  <StyledText>Stimmung: {entry.mood}</StyledText>
+                  <StyledText>
+                    Körperliches Wohlbefinden:{entry.body}
+                  </StyledText>
 
-                {entry.comment && (
-                  <>
-                    <p>Kommentar:</p>
-                    <StyledComment>{entry.comment}</StyledComment>
-                  </>
-                )}
-                <StyledEditButton onClick={() => handleEdit(index)}>
-                  ✏️
-                </StyledEditButton>
-                <StyledDeleteButton onClick={() => handleDelete(index)}>
-                  🗑️
-                </StyledDeleteButton>
-              </section>
-            )}
-          </StyledListItem>
-        ))}
+                  {entry.comment && (
+                    <>
+                      <p>Kommentar:</p>
+                      <StyledComment>{entry.comment}</StyledComment>
+                    </>
+                  )}
+                  <StyledEditButton onClick={() => handleEdit(index)}>
+                    ✏️
+                  </StyledEditButton>
+                  <StyledDeleteButton onClick={() => handleDelete(index)}>
+                    🗑️
+                  </StyledDeleteButton>
+                </section>
+              )}
+            </StyledListItem>
+          ))}
       </ul>
       <HomepageButton>
         <Button href="/">Homepage</Button>
@@ -130,7 +134,12 @@ const StyledListItem = styled.li`
   margin-right: 20px;
   margin-left: 20px;
   margin-top: 10px;
+  margin-bottom: ${(props) => (props.lastChild ? "30px" : "10px")};
   list-style: none;
+
+  &:lst-child {
+    margin-margin: 30px;
+  }
 `;
 
 const StyledEditButton = styled.div`
