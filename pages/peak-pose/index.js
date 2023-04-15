@@ -1,5 +1,6 @@
 import Heading from "../../components/Heading";
 import Link from "next/link";
+import Image from "next/image";
 import FilteredPoses from "../../components/FilteredPoses";
 import { useRouter } from "next/router";
 import styled from "styled-components";
@@ -11,7 +12,7 @@ export default function PeakPose() {
 
   return (
     <StyledBody>
-      <Heading>Yoga App</Heading>
+      <Heading>YogaMatch</Heading>
       <StyledLink href="/progress-list" role="img" aria-label="calendar">
         <span>📆</span>
       </StyledLink>

@@ -7,7 +7,7 @@ export default function RandomPeakPose({ poses }) {
   return (
     <StyledBody>
       <main>
-        <Heading>Yoga App</Heading>
+        <Heading>YogaMatch</Heading>
         <StyledLink href="/progress-list" role="img" aria-label="calendar">
           <span>📆</span>
         </StyledLink>
