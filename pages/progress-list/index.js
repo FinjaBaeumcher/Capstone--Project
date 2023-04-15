@@ -4,19 +4,20 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Dancing_Script } from "@next/font/google";
 
-const dacingScript = Dancing_Script({ subsets: ["latin"] });
+const dancingScript = Dancing_Script({ subsets: ["latin"] });
 
 export default function ProgressList({ moods, setMoods }) {
   const [editedIndex, setEditedIndex] = useState(null);
 
   const handleEdit = (index) => {
-    setEditedIndex(index);
+    const editedIndex = moods.length - 1 - index;
+    setEditedIndex(editedIndex);
   };
 
   const handleSave = (index, updatedEntry) => {
     const updatedMoods = [...moods];
     updatedMoods.map((entry, i) => {
-      if (i === index) {
+      if (i === moods.length - 1 - index) {
         return (updatedMoods[i] = {
           ...updatedEntry,
           date: entry.date,
@@ -45,7 +46,7 @@ export default function ProgressList({ moods, setMoods }) {
   if (!moods.length) {
     return (
       <>
-        <h2>Noch kein Inhalt</h2>
+        <h2>Noch kein Inhalt!</h2>
         <p>
           Hier werden deine Stimmungen gespeichert. Diese kannst du eingeben,
           indem du einen Flow beendest und auf &quot;Fertig&quot; klickst.
@@ -55,7 +56,7 @@ export default function ProgressList({ moods, setMoods }) {
   }
 
   if (!Array.isArray(moods)) {
-    return <h2>No Content</h2>;
+    return <h2>Kein Inhalt</h2>;
   }
 
   return (
@@ -63,7 +64,7 @@ export default function ProgressList({ moods, setMoods }) {
       <StyledHeading>Meine Stimmungen:</StyledHeading>
       <ul>
         {moods
-          .slice()
+          .slice(0)
           .reverse()
           .map((entry, index) => (
             <StyledListItem key={index} lastChild={index === moods.length - 1}>
@@ -91,10 +92,14 @@ export default function ProgressList({ moods, setMoods }) {
                       <StyledComment>{entry.comment}</StyledComment>
                     </>
                   )}
-                  <StyledEditButton onClick={() => handleEdit(index)}>
+                  <StyledEditButton
+                    onClick={() => handleEdit(moods.length - 1 - index)}
+                  >
                     ✏️
                   </StyledEditButton>
-                  <StyledDeleteButton onClick={() => handleDelete(index)}>
+                  <StyledDeleteButton
+                    onClick={() => handleDelete(moods.length - 1 - index)}
+                  >
                     🗑️
                   </StyledDeleteButton>
                 </section>
@@ -112,7 +117,7 @@ export default function ProgressList({ moods, setMoods }) {
 const StyledDate = styled.h3`
   display: flex;
   justify-content: center;
-  font-family: ${dacingScript.style.fontFamily};
+  font-family: ${dancingScript.style.fontFamily};
   color: purple;
   margin: 20px;
 `;
