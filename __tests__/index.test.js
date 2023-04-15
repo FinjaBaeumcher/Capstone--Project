@@ -1,4 +1,4 @@
-import RandomPeakPose from "../pages/random-peak-pose";
+import Homepage from "../pages";
 import { render, screen } from "@testing-library/react";
 
 jest.mock("next/router", () => ({
@@ -10,10 +10,15 @@ jest.mock("next/router", () => ({
   },
 }));
 
+const poses = [
+  { id: 1, name: "Pose 1", benefit: "Beine" },
+  { id: 2, name: "Pose 2", benefit: "Bauch" },
+];
+
 test("test", () => {
-  render(<RandomPeakPose />);
+  render(<Homepage poses={poses} />);
   const element = screen.getByRole("heading", {
-    name: /Yoga App/,
+    name: /YogaMatch/,
   });
   expect(element).toBeInTheDocument();
 });

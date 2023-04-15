@@ -30,7 +30,7 @@ export default function Homepage({ poses }) {
 
   return (
     <StyledMain>
-      <Heading>Yoga App</Heading>
+      <Heading>YogaMatch</Heading>
       <StyledForm>
         <StyledLabel htmlFor="poseFilter">
           Auf welchen Körperbereich möchtst du dich konzentrieren?
