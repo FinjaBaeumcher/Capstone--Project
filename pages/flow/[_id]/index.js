@@ -1,6 +1,7 @@
 import AppropriateFlow from "../../../components/AppropriateFlow";
 import { useRouter } from "next/router";
 import Button from "../../../components/Button";
+import styled from "styled-components";
 
 export default function DetailsPage({ poses }) {
   const router = useRouter();
@@ -18,9 +19,14 @@ export default function DetailsPage({ poses }) {
   const flow = poses[flowIndex];
 
   return (
-    <>
+    <StyledMain>
       <AppropriateFlow poses={poses} flow={flow} />
       <Button href="/evaluation-form">Fertig</Button>
-    </>
+    </StyledMain>
   );
 }
+
+const StyledMain = styled.main`
+  background-image: linear-gradient(180deg, thistle 0%, lavender 62%);
+  background-size: cover;
+`;
