@@ -1,5 +1,7 @@
 # YogaMatch
 
+![IMG_1064](https://user-images.githubusercontent.com/123068226/232753857-cbb38486-5138-4826-a9b6-cb2abce6eb9e.jpg)
+
 You can find the hosted version on Vercel: [YogaMatch](https://yogamatch-hvhkaer78-finjabaeumcher.vercel.app/)
 
 ### Description
